@@ -1,5 +1,8 @@
 {% extends 'shop/basic.html' %}
-{% block title%} MyAwesomeCart - Best Ecommerce Website{% endblock %}
+
+{% block title%} Search Results - My Awesome Cart{% endblock %}
+
+
 {% block css %}
 .col-md-3
 {
@@ -91,6 +94,10 @@ padding-right: 0;
 {% endblock %}
 {% block js %}
 <script>
+{% if msg|length != 0 %}
+alert('{{msg}}');
+window.location.href = "/"
+{% endif %}
 // Find out the cart items from localStorage
 if (localStorage.getItem('cart') == null) {
     var cart = {};
